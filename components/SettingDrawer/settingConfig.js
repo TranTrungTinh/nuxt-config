@@ -1,4 +1,4 @@
-import { message } from 'ant-design-vue/lib'
+import { message } from 'ant-design-vue/lib/message'
 
 let lessNodesAppended
 

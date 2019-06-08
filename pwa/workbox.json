@@ -1,0 +1,5 @@
+{
+  "dev": true,
+  "autoRegister": false,
+  "importScripts": ["custom-sw.js"]
+}

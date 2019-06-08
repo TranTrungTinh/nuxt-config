@@ -2,7 +2,7 @@
   <div class="logo">
     <nuxt-link :to="{name:'index'}">
       <LogoSvg alt="logo" />
-      <h1 v-if="showTitle">
+      <h1 v-if="showTitle" class="title">
         {{ title }}
       </h1>
     </nuxt-link>
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import LogoSvg from '@/assets/logo.svg?inline'
+import LogoSvg from '@/assets/images/logo.svg?inline'
 
 export default {
   name: 'Logo',
@@ -20,7 +20,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: () => 'SKG Web',
+      default: () => 'Lazaha',
       required: false
     },
     showTitle: {
@@ -31,3 +31,10 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.logo {
+  .title {
+    font-weight: bold !important;
+  }
+}
+</style>

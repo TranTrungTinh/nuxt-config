@@ -39,7 +39,7 @@
       />
 
       <!-- layout content -->
-      <a-layout-content :style="{ height: '100%', margin: '24px 24px 0', paddingTop: fixedHeader ? '64px' : '0' }">
+      <a-layout-content :style="{ height: '100%', margin: '24px 24px 0', paddingTop: fixedHeader ? '96px' : '0', background: '#fff' }">
         <multi-tab v-if="multiTab" />
         <transition name="page-transition">
           <slot />
@@ -65,7 +65,7 @@ import { mapActions } from 'vuex'
 import { mixin, mixinDevice } from '@/utils/mixin'
 import config from '@/config/defaultSettings'
 
-import MultiTab from '@/components/MultiTab'
+// import MultiTab from '@/components/MultiTab'
 import SideMenu from '@/components/Menu/SideMenu'
 import GlobalHeader from '@/components/GlobalHeader'
 import GlobalFooter from '@/components/GlobalFooter'
@@ -76,7 +76,7 @@ import { AppDeviceEnquire } from '@/utils/device'
 export default {
   name: 'BasicLayout',
   components: {
-    MultiTab,
+    // MultiTab,
     SideMenu,
     GlobalHeader,
     GlobalFooter,

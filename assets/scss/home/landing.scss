@@ -1,0 +1,56 @@
+.landing {
+  margin: 40px 0;
+
+  & h1 {
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 80px;
+  }
+
+  &-cover {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 40px 0;
+  }
+
+  &-categories {
+
+    &--item {
+      height: 496px;
+      width: 100%;
+      border-radius: 8px;
+
+      background-size: cover;
+      background-position: center;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 28px 32px;
+
+      & span {
+        color: #fff;
+        font-weight: 600;
+        font-size: 24px;
+      }
+    }
+
+    .accessory {
+      background-image: url('~@/assets/images/accessory.jpg');
+    }
+    .artem {
+      background-image: url('~@/assets/images/artem.jpg');
+    }
+    .craft {
+      background-image: url('~@/assets/images/craft.jpg');
+      height: 240px;
+    }
+    .maksym {
+      background-image: url('~@/assets/images/maksym.jpg');
+      height: 240px;
+      margin-bottom: 16px;
+    }
+  }
+
+}

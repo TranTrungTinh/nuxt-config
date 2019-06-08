@@ -238,7 +238,7 @@ import SettingItem from './SettingItem'
 import config from '@/config/defaultSettings'
 import { updateTheme, updateColorWeak, colorList } from './settingConfig'
 
-import LogoSvg from '@/assets/logo.svg?inline'
+import LogoSvg from '@/assets/images/logo.svg?inline'
 import { mixin, mixinDevice } from '@/utils/mixin'
 
 export default {

@@ -1,0 +1,18 @@
+.sub-landing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &--left {
+    &--title {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    &--des {
+      font-size: 22px;
+      font-weight: 400;
+      margin: 12px 0;
+    }
+  }
+}

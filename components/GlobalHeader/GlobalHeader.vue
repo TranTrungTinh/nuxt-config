@@ -16,9 +16,13 @@
             <div class="header-index-left">
               <logo class="top-nav-header" :show-title="device !== 'mobile'" />
               <!-- <s-menu v-if="device !== 'mobile'" mode="horizontal" :menu="menus" :theme="theme" /> -->
+              <the-search v-if="device !== 'mobile'" />
               <a-icon v-if="device === 'mobile'" class="trigger" :type="collapsed ? 'menu-fold' : 'menu-unfold'" @click="toggle" />
             </div>
             <user-menu class="header-index-right" />
+          </div>
+          <div class="header-index-wide">
+            <sub-header />
           </div>
         </div>
       </a-layout-header>
@@ -27,9 +31,11 @@
 </template>
 
 <script>
-import UserMenu from '../tools/UserMenu'
+import UserMenu from '@/components/tools/UserMenu'
 // import SMenu from '../Menu/'
-import Logo from '../tools/Logo'
+import { TheSearch } from '@/components/search'
+import Logo from '@/components/tools/Logo'
+import { SubHeader } from '@/components/home'
 import { mixin } from '@/utils/mixin'
 
 export default {
@@ -37,7 +43,9 @@ export default {
   components: {
     UserMenu,
     // SMenu,
-    Logo
+    TheSearch,
+    Logo,
+    SubHeader
   },
   mixins: [mixin],
   props: {
@@ -120,5 +128,8 @@ export default {
 }
 .showHeader-enter, .showHeader-leave-to {
   opacity: 0;
+}
+.ant-layout-header {
+  height: auto;
 }
 </style>

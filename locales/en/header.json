@@ -2,5 +2,8 @@
   "authentication": {
     "login": "Login",
     "signup": "Sign up"
+  },
+  "dropdown-menu": {
+    "title": "Language"
   }
 }

@@ -1,0 +1,15 @@
+.footer {
+
+  &--item {
+
+    .title {
+      font-size: 18px;
+      font-weight: 500 !important;
+      padding-bottom: 15px;
+    }
+
+    p {
+      font-weight: 400;
+    }
+  }
+}

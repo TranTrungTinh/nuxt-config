@@ -1,16 +1,5 @@
-<template>
-  <div>
-    settings
-  </div>
-</template>
-
 <script>
+import Settings from '~/pages/_lang/user/settings'
 
-export default {
-
-}
+export default Settings
 </script>
-
-<style scoped>
-
-</style>

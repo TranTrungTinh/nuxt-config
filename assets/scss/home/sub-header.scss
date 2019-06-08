@@ -1,0 +1,15 @@
+.sub-header {
+  width: 100%;
+  line-height: 32px;
+  margin-top: 12px;
+
+  &--right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__item {
+      cursor: pointer;
+    }
+  }
+}

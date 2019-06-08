@@ -66,13 +66,9 @@
           <a @click.stop.prevent="signIn('Facebook')">
             <a-icon class="item-icon" type="facebook" />
           </a>
-          <a>
+          <a @click.stop.prevent="signIn('Google')">
             <a-icon class="item-icon" type="google-plus" />
           </a>
-          <a>
-            <a-icon class="item-icon" type="twitter" />
-          </a>
-
           <a v-if="options.isSignUpDisplayed" class="register" @click="signUp">Register</a>
         </div>
       </a-form>

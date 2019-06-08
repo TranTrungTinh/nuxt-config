@@ -1,5 +1,17 @@
 {
   "head": {
-    "title": "Xin chào"
+    "title": "Handmade - Nền tảng thương mại điện tử cho giao dịch sản phẩm Handmade.",
+    "description": "Nền tảng thương mại điện tử cho giao dịch sản phẩm Handmade. Nơi mà người thủ công mỹ nghệ có thể quảng bá và bán sản phẩm của họ. Và người mua có thể tìm kiếm và mua sản phẩm thủ công.",
+    "keywords": "đồ handmade, người làm thủ công mỹ nghệ, Sản phẩm thủ công của bạn, Trang chủ, Danh sách sản phẩm, Tìm kiếm, Thanh toán, Giao hàng"
+  },
+  "landing": {
+    "title": "Mua bán đồ handmade?",
+    "sub-title": "Có ngay Lazaha!",
+    "categories": {
+      "jewelry-accessories": "Phụ kiện, trang sức",
+      "fashion": "Thời trang",
+      "decorations": "Đồ trang trí",
+      "tools-and-materials": "Dụng cụ, vật liệu"
+    }
   }
 }

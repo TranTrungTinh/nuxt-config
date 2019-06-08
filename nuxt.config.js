@@ -1,13 +1,32 @@
+const manifest = require('./pwa/manifest')
+
 const pkg = require('./package')
+
 const generateRoutes = [
-  '/dashboard/workplace',
-  '/en/dashboard/workplace',
-  '/dashboard/analysis',
-  '/en/dashboard/analysis'
-];
+  '/',
+  '/home',
+  '/exception/403',
+  '/exception/404',
+  '/exception/500',
+  '/products',
+  '/products/:id',
+
+  '/en/',
+  '/en/home',
+  '/en/exception/403',
+  '/en/exception/404',
+  '/en/exception/500',
+  '/en/products',
+  '/en/products/:id'
+]
 
 module.exports = {
-  mode: 'universal', // universal: spa
+  mode: 'spa', // universal: spa
+  manifest,
+  // workbox: {
+  //   'dev': true,
+  //   'importScripts': ['custom-sw.js']
+  // },
 
   router: {
     // prefetchLinks: false,
@@ -24,7 +43,7 @@ module.exports = {
     }
   },
   server: {
-    port: 3002, // default: 3000
+    port: 3000, // default: 3000
     host: 'localhost' // default: localhost,
   },
   /*
@@ -33,9 +52,9 @@ module.exports = {
   head: {
     title: pkg.name,
     script: [
-      { src: '/libs/enquire.min.js' },
-      { src: '/pwabuilder-sw-register.js' },
-      { src: '/awa-register.js' }
+      {
+        src: '/libs/enquire.min.js'
+      }
     ],
     meta: [
       { charset: 'utf-8' },
@@ -43,18 +62,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      // { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'icon', type: 'image/png', href: 'Images/favicon-32x32.png'},
-      { rel: 'manifest', href: '/manifest.webmanifest' },
-      { rel: 'apple-touch-icon', href: '/Images/assets/icons/apple-icon-06144a2a7b5101d447ecb4832502e73e.png' },
-      { rel: 'apple-touch-icon', sizes: '57x57', href: '/Images/assets/icons/apple-icon-57x57-b82ef058b133f3197df61c326fa7cd6d.png' },
-      { rel: 'apple-touch-icon', sizes: '72x72', href: '/Images/assets/icons/apple-icon-72x72-66bbf8447788cee426eebcddfa8eede8.png' },
-      { rel: 'apple-touch-icon', sizes: '76x76', href: '/Images/assets/icons/apple-icon-76x76-8e88034967133f6a0454fe32e2070ffd.png' },
-      { rel: 'apple-touch-icon', sizes: '114x114', href: '/Images/assets/icons/apple-icon-114x114-a2731f540851db0ed9fb4a7c74e2c6ce.png' },
-      { rel: 'apple-touch-icon', sizes: '120x120', href: '/Images/assets/icons/apple-icon-120x120-06144a2a7b5101d447ecb4832502e73e.png' },
-      { rel: 'apple-touch-icon', sizes: '144x144', href: '/Images/assets/icons/apple-icon-144x144-487a503e5cb29bbe0df7296db4093b7e.png' },
-      { rel: 'apple-touch-icon', sizes: '152x152', href: '/Images/assets/icons/apple-icon-152x152-b600c0b40a21bbb9f8c1d18acde168e9.png' },
-      { rel: 'apple-touch-icon', sizes: '180x180', href: '/Images/assets/icons/apple-icon-180x180-f0f5be1ded11c7ec66b00dd23c277a5d.png' }]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ]
   },
 
   /*
@@ -67,10 +76,9 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    // 'ant-design-vue/dist/antd.css'
-    { src: 'ant-design-vue/dist/antd.less', lang: 'less' },
-    { src: '@/assets/css/_theme.less', lang: 'less' },
-    { src: '@/assets/css/main.scss', lang: 'scss' }
+    // { src: 'ant-design-vue/dist/antd.less', lang: 'less' },
+    'ant-design-vue/dist/antd.css',
+    { src: '@/assets/scss/main.scss', lang: 'scss' }
   ],
 
   /*
@@ -82,20 +90,22 @@ module.exports = {
     { src: '~plugins/bus' },
     { src: '~plugins/i18n.js' },
     { src: '~plugins/aws', ssr: false },
-    { src: '~plugins/use', ssr: false }
+    { src: '~plugins/app-sync', ssr: false },
+    { src: '~plugins/use', ssr: false },
+    // { src: '~plugins/sw', ssr: false }
   ],
 
   generate: {
-    routes: generateRoutes,
+    routes: generateRoutes
   },
 
   /*
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/pwa',
     'nuxt-svg-loader',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/pwa'
   ],
 
   axios: {
@@ -117,8 +127,8 @@ module.exports = {
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/,
-          options : {
-            fix : true
+          options: {
+            fix: true
           }
         })
       }

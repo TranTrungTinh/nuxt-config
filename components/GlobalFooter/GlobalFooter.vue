@@ -1,49 +1,35 @@
 <template>
   <div class="footer">
-    <div class="links">
-      <a href="_self">Help</a>
-      <a href="_self">Privacy</a>
-      <a href="_self">Terms</a>
-    </div>
-    <div class="copyright">
-      Ant Design ©2019 Created by Ant UED
-    </div>
+    <a-row :gutter="16">
+      <a-col :xs="24" :lg="12">
+        <div class="footer--logo">
+          <logo-svg />
+          <span>Lazaha</span>
+        </div>
+      </a-col>
+      <a-col :xs="24" :lg="12">
+        <div class="footer--copyright">
+          <p>@2019 Handmade, Inc</p>
+          <p>Term of service</p>
+          <p>Privacy</p>
+        </div>
+      </a-col>
+    </a-row>
   </div>
 </template>
 
 <script>
+import LogoSvg from '@/assets/images/logo.svg?inline'
+
 export default {
   name: 'GlobalFooter',
+  components: { LogoSvg },
   data() {
     return {}
   }
 }
 </script>
 
-<style lang="less" scoped>
-.footer {
-  padding: 0 16px;
-  margin: 48px 0 24px;
-  text-align: center;
-
-  .links {
-    margin-bottom: 8px;
-
-    a {
-      color: rgba(0, 0, 0, 0.45);
-
-      &:hover {
-        color: rgba(0, 0, 0, 0.65);
-      }
-
-      &:not(:last-child) {
-        margin-right: 40px;
-      }
-    }
-  }
-  .copyright {
-    color: rgba(0, 0, 0, 0.45);
-    font-size: 14px;
-  }
-}
+<style lang="scss" scoped>
+  @import '@/assets/scss/global-footer/global-footer.scss';
 </style>

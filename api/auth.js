@@ -1,9 +1,9 @@
 import { Auth } from 'aws-amplify'
 
 // TODO: get from cokkie in case server
-export async function getInfo() {
+export async function getInfo(bypassCache = false) {
   try {
-    const user = await Auth.currentAuthenticatedUser()
+    const user = await Auth.currentAuthenticatedUser({ bypassCache })
     const { attributes, username, signInUserSession: { idToken: token } } = user
     const groups = token.payload['cognito:groups'] || []
     const idToken = token.jwtToken

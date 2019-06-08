@@ -2,5 +2,8 @@
   "authentication": {
     "login": "Đăng nhập",
     "signup": "Đăng ký"
+  },
+  "dropdown-menu": {
+    "title": "Ngôn ngữ"
   }
 }

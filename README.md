@@ -1,40 +1,22 @@
-# ⚡ Nuxt config
-
-Full config clone built with Nuxt.js.
-
-## Features
-
-- Server Side Rendering & Caching
-- Code Splitting
-- Single-file Vue Components
-- SSR support i18n
-- PWA
+# web_user
+https://github.com/mya-ake/nuxt-on-lambda/blob/master/package.json
+> My classy Nuxt.js project
 
 ## Build Setup
 
-**Requires Node.js 8+**
-
 ``` bash
 # install dependencies
-npm install # or yarn
+$ yarn install
 
-# serve in dev mode, with hot reload at localhost:3000
-npm run dev
+# serve with hot reload at localhost:3000
+$ yarn run dev
 
-# build for production
-npm run build
+# build for production and launch server
+$ yarn run build
+$ yarn start
 
-# serve in production mode
-npm start
-
-# validate code with ESLint (with Prettier)
-npm run lint
-
-# validate andf fix with ESLint (with Prettier)
-npm run lintfix
-
+# generate static project
+$ yarn run generate
 ```
 
-## License
-
-MIT
+For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).

@@ -1,5 +1,17 @@
 {
   "head": {
-    "title": "Welcome"
+    "title": "Handmade - E-Commerce platform for Handmade product Trading.",
+    "description": "E-Commerce platform for Handmade product Trading. Where Handicraftsman can promote and sell their product. And Buyer can search and buy handmade product.",
+    "keywords": "handmade, handicraftsman, crafts, your handmade product, start page, home, products, search, check-out, delivery"
+  },
+  "landing": {
+    "title": "Buying and selling handmade goods?",
+    "sub-title": "Available now Lazaha!",
+    "categories": {
+      "jewelry-accessories": "Jewelry accessories",
+      "fashion": "Fashion",
+      "decorations": "Decorations",
+      "tools-and-materials": "Tools and materials"
+    }
   }
 }

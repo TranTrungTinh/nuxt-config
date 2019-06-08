@@ -1,12 +1,10 @@
 <template>
   <div class="user-wrapper">
     <div class="content-box">
-      <shopping-cart class="action" />
       <div v-if="isAuthenticated">
-        <notice-icon class="action" />
         <a-dropdown>
           <span class="action ant-dropdown-link user-dropdown-menu">
-            <a-avatar class="avatar" size="small" :src="avatar" />
+            <a-avatar class="avatar" size="small" :src="avatarUrl" icon="user" />
           </span>
           <a-menu slot="overlay" class="user-dropdown-menu-wrapper">
             <a-menu-item key="0">
@@ -30,13 +28,12 @@
             </a-menu-item>
           </a-menu>
         </a-dropdown>
+        <notice-icon class="action" />
       </div>
       <span v-else class="action ant-dropdown-link user-dropdown-menu" @click="handleLogin">
         <span>{{ $t('header.authentication.login') }}</span>
       </span>
-      <span>
-        <language />
-      </span>
+      <shopping-cart class="action" />
     </div>
 
     <a-modal
@@ -52,26 +49,38 @@
 </template>
 
 <script>
+import { getS3Image } from '@/api/storage'
 import { NoticeIcon, ShoppingCart } from '@/components/NoticeIcon'
 import { mapActions, mapGetters } from 'vuex'
 import { Authenticator } from '@/components/Authenticator'
-import Language from '@/components/tools/Language'
 
 export default {
   name: 'UserMenu',
   components: {
     NoticeIcon,
     ShoppingCart,
-    Authenticator,
-    Language
+    Authenticator
   },
   data() {
     return {
-      showLoginDialog: false
+      showLoginDialog: false,
+      avatarUrl: ''
     }
   },
   computed: {
     ...mapGetters('user', ['nickname', 'avatar', 'isAuthenticated'])
+  },
+  watch: {
+    avatar: {
+      immediate: true,
+      handler() {
+        if (this.avatar.includes('https') || this.avatar.includes('/avatar2.jpg')) {
+          this.avatarUrl = this.avatar
+          return
+        }
+        getS3Image(this.avatar).then((url) => { this.avatarUrl = url })
+      }
+    }
   },
   mounted() {
     this.$bus.$on('authState', (info) => {

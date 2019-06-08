@@ -1,7 +1,10 @@
 <template>
   <a-dropdown placement="bottomRight">
-    <span class="action ant-dropdown-link user-dropdown-menu">
-      <a-icon type="global" />
+    <span class="dropdown">
+      <vi v-if="$i18n.locale === 'vi'" alt="vi" />
+      <en v-else alt="en" />
+      <span>{{ $t('header.dropdown-menu.title') }}</span>
+      <a-icon type="caret-down" />
     </span>
     <a-menu slot="overlay" class="user-dropdown-menu-wrapper" @click="changeLanguage">
       <a-menu-item
@@ -18,8 +21,8 @@
 </template>
 
 <script>
-import vi from '@/assets/vi.svg?inline'
-import en from '@/assets/en.svg?inline'
+import vi from '@/assets/images/vi.svg?inline'
+import en from '@/assets/images/en.svg?inline'
 
 export default {
   components: { vi, en },
@@ -71,6 +74,15 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.dropdown {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  & span {
+    padding: 0 5px;
+  }
+}
 .language {
 
   &--item {

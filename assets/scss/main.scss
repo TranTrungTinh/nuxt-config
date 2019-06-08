@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap');
+
+// color
+$primary:    #FF9417 !default;
+$secondary:    #1890FF !default;
+
+#__nuxt, #__layout {
+    height: 100%;
+}
+
+// Defind global class use all element
+.handmade-links {
+    cursor: pointer;
+    &:hover {
+        color: $primary;
+    }
+}

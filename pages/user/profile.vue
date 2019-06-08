@@ -1,16 +1,5 @@
-<template>
-  <div>
-    Profile
-  </div>
-</template>
-
 <script>
+import Profile from '~/pages/_lang/user/profile'
 
-export default {
-
-}
+export default Profile
 </script>
-
-<style scoped>
-
-</style>
