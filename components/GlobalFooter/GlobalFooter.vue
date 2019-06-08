@@ -15,15 +15,16 @@
         </div>
       </a-col>
     </a-row>
+    <tab-bottom />
   </div>
 </template>
 
 <script>
 import LogoSvg from '@/assets/images/logo.svg?inline'
-
+import TabBottom from '@/components/tools/tab-bottom.vue'
 export default {
   name: 'GlobalFooter',
-  components: { LogoSvg },
+  components: { LogoSvg, TabBottom },
   data() {
     return {}
   }
