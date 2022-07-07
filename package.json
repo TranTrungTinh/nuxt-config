@@ -29,7 +29,7 @@
     "jwt-decode": "^2.2.0",
     "localforage": "^1.7.3",
     "lodash.get": "^4.4.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "nprogress": "^0.2.0",
     "nuxt": "^2.4.0",
     "nuxt-svg-loader": "^1.0.1",
